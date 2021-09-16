@@ -14,20 +14,21 @@ COPY *.go ./
 
 RUN go build -o /dockergo
 # sometimes you'll see /go/bin/dockergo used. Anything will work as we will
-# inject the artifact into a scratch (empty )container
+# inject the artifact into a scratch (empty)container
 
 ##
 ## Deploy
 ##
 
-# a "scratch" container is an "empty" container
-FROM scratch
+# this is a bit more than a scratch container
+# from google cloud repository get a minimal debian image
+FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
 COPY --from=build /dockergo /dockergo
 
-EXPOSE 8080
+EXPOSE 8085
 
 USER nonroot:nonroot
 
