@@ -28,7 +28,7 @@ WORKDIR /
 
 COPY --from=build /dockergo /dockergo
 
-EXPOSE 8085
+EXPOSE 9876
 
 USER nonroot:nonroot
 
