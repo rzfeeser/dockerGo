@@ -19,7 +19,7 @@ RUN go build -o /dockergo
 
 # When we launch the container we will specify the ports to open
 # via the docker command. This is more for documentation
-EXPOSE 8080
+EXPOSE 9876
 
 # (Optional) environment variable that our dockerised
 # application can make use of. The value of environment
