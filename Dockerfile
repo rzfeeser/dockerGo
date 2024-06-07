@@ -1,4 +1,4 @@
-FROM golang:1.16-alpine
+FROM docker.io/golang:1.16-alpine
 
 # Set destination for COPY
 # /app is a common working directory to create
